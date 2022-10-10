@@ -5,5 +5,5 @@ def safe_print_list(my_list=[], x=0):
         try:
             print("{:d}".format(my_list[i]), end="")
             count += 1
-        print()
+       print()
     return count
