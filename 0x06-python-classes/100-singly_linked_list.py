@@ -11,7 +11,7 @@ the linked list sorted by the int value stored within.
 """
 
 
-class Node:
+class Node():
     """A class that creates a single Node in a Linked List.
     """
     def __init__(self, data, next_node=None):
@@ -24,7 +24,10 @@ class Node:
 
     @data.setter
     def data(self, value):
-        if type(value) != int:
+        '''
+         Updates the value for the data
+        '''
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
@@ -34,40 +37,47 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        if not (value is None or type(value) is Node):
-            raise TypeError("next must be a Node object")
+        if value is not None and not isinstance(value, Node):
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
-class SinglyLinkedList:
+class SinglyLinkedList():
     """A class that creates a Singly Linked List.
     """
     def __init__(self):
         self.__head = None
 
-    def __repr__(self):
-        temp = self.__head
-        total = ""
-        while temp:
-            total += "{:d}".format(temp.data)
-            temp = temp.next_node
-            if temp:
-                total += "\n"
-        return total
-
     def sorted_insert(self, value):
+        '''
+            Inserts the nodes in a sorted fashion in increasing order
+        '''
+        node = Node(value)
+        tmp = self.__head
+        # Checks if the head is None to then add the first node.
         if self.__head is None:
-            self.__head = Node(value)
-        else:
-            curr = self.__head
-            prev = None
-            while curr and value > curr.data:
-                prev = curr
-                curr = curr.next_node
-            if curr is None:
-                prev.next_node = Node(value)
-            elif curr is self.__head and prev is None:
-                self.__head = Node(value, curr)
+            self.__head = node
+            return
+        # Checks if the first node is less than the new node.
+        if node.data < tmp.data:
+            node.next_node = tmp
+            self.__head = node
+            return
+        # Iterates and checks if the next node is more or less than new node.
+        while tmp.next_node is not None:
+            if tmp.next_node.data < node.data:
+                tmp = tmp.next_node
             else:
-                newNode = Node(value, curr)
-                prev.next_node = newNode
+                node.next_node = tmp.next_node
+                tmp.next_node = node
+                return
+        tmp.next_node = node
+
+    def __str__(self):
+        tmp = self.__head
+        if tmp is None:
+            return ("")
+        while tmp.next_node is not None and tmp:
+            print(tmp.data)
+            tmp = tmp.next_node
+        return (str(tmp.data))
