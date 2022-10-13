@@ -8,6 +8,8 @@ Attribute position which takes a default (0, 0) tuple.
 Methods Getter and Setter properties for size and position.
 Method area returns size of area of the square.
 """
+
+
 class Square:
     """A class that defines a square by size, which defaults 0.
     Also defines position using a tuple, which defaults (0, 0).
@@ -26,7 +28,7 @@ class Square:
             Return: The current square area.
         '''
         return self.__size * self.__size
-    
+
     @property
     def size(self):
         return self.__size
@@ -49,25 +51,25 @@ class Square:
     @position.setter
     def position(self, value):
         '''Updating the private attributes
-           value (int): tuple of two positve numbers.
+value (int): tuple of two positve numbers.
         '''
         if isinstance(value, tuple) and len(value) == 2:
-                if isinstance(value[0], int) and isinstance(value[1], int):
-                    if value[0] >= 0 and value[1] >= 0:
-                        self.__position = value
-                        return
+            if isinstance(value[0], int) and isinstance(value[1], int):
+                if value[0] >= 0 and value[1] >= 0:
+                    self.__position = value
+                    return
         raise TypeError("position must be a tuple of 2 positive integers")
-  
+
     def my_print(self):
         '''
-            prints in stdout the square with the character # or a new line
+          prints in stdout the square with the character # or a new line
             is size is zero.
         '''
         if self.__size == 0:
             return ""
 
         for line in range(self.__position[1]):
-                print()
+            print()
         for col in range(self.__size - 1):
             print("{}{}".format(" " * self.__position[0], "#" * self.__size))
         return "{}{}".format(" " * self.__position[0], "#" * self.__size)
