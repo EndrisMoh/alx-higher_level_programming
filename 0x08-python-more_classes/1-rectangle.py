@@ -1,31 +1,31 @@
 #!/usr/bin/python3
-""" Module 1 Rectangle class
-A rectangle with width and height.
-"""
+'''Module 1
+    Defines a Rectangle
+'''
 
 
 class Rectangle:
-    """
-    Rectangle functions and data
-    """
-
     def __init__(self, width=0, height=0):
-        """ Instantiation
-        """
-        self.width = width
+        '''
+            Calling the setters to initialize the instance variables
+        '''
         self.height = height
+        self.width = width
 
     @property
     def width(self):
-        """ Getter for width
-        """
+        '''
+            Returning the private var
+        '''
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Setter for width
-        """
-        if type(value) != int:
+        '''
+            Checking for TypeError and ValueError
+            then setting up the private var
+        '''
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -33,16 +33,19 @@ class Rectangle:
 
     @property
     def height(self):
-        """ Getter for height
-        """
+        '''
+            Returning the private var
+        '''
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ Setter for height
-        """
-        if type(value) != int:
-            raise TypeError("width must be an integer")
+        '''
+            Checking for TypeError and ValueError
+            then setting up the private var
+        '''
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
