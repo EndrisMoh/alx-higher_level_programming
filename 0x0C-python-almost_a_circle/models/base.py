@@ -104,5 +104,3 @@ class Base:
     def draw(list_rectangles, list_squares):
         """ Opens window & draws all rectangles & squares
         """
-
-
