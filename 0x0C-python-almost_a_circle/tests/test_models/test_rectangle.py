@@ -113,5 +113,6 @@ class TestRectangle(unittest.TestCase):
         self.assertDictEqual(o3.to_dictionary(), d3)
         self.assertDictEqual(o4.to_dictionary(), d4)
 
+
 if __name__ == '__main__':
     unittest.main()
