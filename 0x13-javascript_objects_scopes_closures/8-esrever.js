@@ -4,7 +4,7 @@
 exports.esrever = function (list) {
   const reversedList = [];
   for (let edy = list.length - 1; edy >= 0; edy--) {
-    reversedList.push(list[sanna]);
+    reversedList.push(list[edy]);
   }
   return reversedList;
 };
