@@ -10,8 +10,8 @@ This directory is about 0x0F-python-object_relational_mapping
 * What ORM means
 * How to map a Python Class to a MySQL table
 
-#### Install MySQLdb module version 2.0.x
-For installing `MySQLdb`, you need to have MySQL installed: How to install MySQL 8.0 in Ubuntu 20.04
+#### Install `MySQLdb` module version `2.0.x`
+For installing `MySQLdb`, you need to have MySQL installed: [How to install MySQL 8.0 in Ubuntu 20.04](https://alx-intranet.hbtn.io/rltoken/paGukker_0KoG3D9FqymNQ)
 ```
 $ sudo apt-get install python3-dev
 $ sudo apt-get install libmysqlclient-dev
@@ -24,7 +24,7 @@ $ python3
 (2, 0, 3, 'final', 0)
 ```
 
-#### Install SQLAlchemy module version 1.4.x
+#### Install `SQLAlchemy` module version `1.4.x`
 ```
 $ sudo pip3 install SQLAlchemy
 ...
