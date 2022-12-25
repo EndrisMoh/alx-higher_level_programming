@@ -2,7 +2,8 @@
 """
 This script defines a City class to work with MySQLAlchemy ORM.
 Class attribute cities must represent a relationship with the class City
-If State object is deleted, all linked City objects must be automatically deleted
+If the State object is deleted, all linked City objects must be \
+automatically deleted
 Also, the reference from a City object to his State should be named state
 """
 
